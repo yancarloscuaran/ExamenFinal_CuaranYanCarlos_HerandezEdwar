@@ -1,0 +1,363 @@
+
+
+
+
+
+
+
+("Para ver con mas detalles descargar el (PDF) este archivo es si llegase el caso de que no se pudiese descargar el PDF")
+
+
+
+
+
+
+
+
+Documentaci�n Programa Administraci�n 
+De Estudiantes (Examen Final)
+
+
+
+
+Docente: 
+Jeyson Alejandro Calvache
+
+
+
+
+Integrantes:
+Yan Carlos Cuaran Imbacuan
+Edwar Andr�s Hern�ndez
+
+Semestre: V
+
+
+
+
+Instituto Tecnol�gico Del Putumayo 
+Sede Mocoa
+Tecnolog�a En Desarrollo De software 
+Lenguaje De Cuarta Generaci�n
+12/06/2021
+
+
+
+Documentaci�n Programa Administraci�n De Estudiantes
+Problema:
+El problema consiste en pasar el Parcial 2 realizado a API REST el cual consist�a en la administraci�n de estudiantes.
+Recomendaciones:
+* Al ingresar los respectivos ID de las tablas en los campos con los que se quiere relacionar hay que tener en cuenta que el ID del objeto o dato debe existir de lo contrario generara un error.
+* Ejemplo: al relacionar un dato de la tabla students con la tabla sessions, el ID del dato de la tabla students debe de existir para hacer la relaci�n.
+* Para que el programa se ejecute correctamente se debe realizar la instalaci�n de la base de datos DB.
+* En la funci�n de ediciones en el programa se debe enviar el ID del dato a editar tanto en la URL como en el JSON esto solo aplica en la edici�n al pasar de los pasos se dar� una explicaci�n gr�fica.
+
+Pasos Para el funcionamiento del programa:
+Paso 1 (cuatro m�todos de periodos)
+Endpoint: /periods
+Este Endpoint tiene los m�todos GET, POST, PUT, DELETE.
+El m�todo GET (visualizar periodos), no tiene ning�n problema se ingresa el link en el cliente de API y nos devuelve una respuesta.
+Link: http://localhost:5000/periods [�GET�]
+http://localhost:5000/periods 
+Respuesta:
+
+El m�todo POST (crear periodos) tiene una serie de pasos extra se debe ingresar los campos de la tabla y los datos que se desea guardar para obtener respuesta.
+
+Link: http://localhost:5000/periods [�POST�]
+http://localhost:5000/periods 
+Datos a ingresar en el JSON:       ------------ >      Respuesta:
+
+{     
+	"year": "2022",
+	"period": 3
+}
+
+
+
+El m�todo PUT (editar periodos) en este caso tiene un caso especial en cuanto al ID se bebe agregar tanto en la URL como en el JSON del dato que se desea actualizar.
+Link: http://localhost:5000/periods/ID [�PUT�]
+Datos a ingresaren el JSON ejemplo:  --------------->   Respuesta:
+http://localhost:5000/periods/5 
+{
+	"id": 5,
+	"year": 2022,
+	"period": 2
+}
+
+El m�todo DELETE (eliminar periodos) en este caso el ID del periodo que se quiere eliminar se debe agregar en la URL.
+Link: http://localhost:5000/periods/ID [�DELETE�]
+ejemplo:
+http://localhost:5000/periods/5 
+Respuesta:
+Paso 2 (cuatro m�todos estudiantes)
+Endpoint: /students
+Este Endpoint tiene los m�todos GET, POST, PUT, DELETE.
+El m�todo GET (visualizar estudiantes), no tiene ning�n problema se ingresa el link en el cliente de API y nos devuelve una respuesta.
+Link: http://localhost:5000/students [�GET�]
+http://localhost:5000/students 
+Respuesta:
+
+El m�todo POST (crear students) tiene una serie de pasos extra se debe ingresar los campos de la tabla y los datos que se desea guardar para obtener respuesta.
+
+Link: http://localhost:5000/students [�POST�]
+http://localhost:5000/students 
+Datos a ingresar en el JSON:       -------------------- >      Respuesta:
+
+{
+	"identification": "1001909019",
+	"name": "juan",
+	"surname": "portilla",
+	"phone": "30899987878",
+	"email": "juan@gmail.com",
+	"semester": "3",
+	"period_id": 2
+}
+
+
+
+El m�todo PUT (editar students) en este caso tiene un caso especial en cuanto al ID se bebe agregar tanto en la URL como en el JSON del dato que se desea actualizar.
+Link: http://localhost:5000/students/ID [�PUT�]
+Datos a ingresaren el JSON ejemplo:  ------------->   Respuesta:
+http://localhost:5000/students/37 
+
+{
+	"id": 37,
+	"identification": "1007866567",
+	"name": "alexander",
+	"surname": "mejia",
+	"phone": "32156277272",
+	"email": "alex@gmail.com",
+	"semester": "5",
+	"period_id": 4
+}
+
+El m�todo DELETE (eliminar students) en este caso el ID del estudiante que se quiere eliminar se debe agregar en la URL.
+Link: http://localhost:5000/students/ID [�DELETE�]
+ejemplo:
+http://localhost:5000/students/31 
+Respuesta:
+
+
+Paso 3 (cuatro m�todos espacios acad�micos)
+Endpoint: /spaces
+Este Endpoint tiene los m�todos GET, POST, PUT, DELETE.
+El m�todo GET (visualizar spaces), no tiene ning�n problema se ingresa el link en el cliente de API y nos devuelve una respuesta.
+Link: http://localhost:5000/spaces [�GET�]
+http://localhost:5000/spaces 
+Respuesta:
+
+
+El m�todo POST (crear spaces) tiene una serie de pasos extra se debe ingresar los campos de la tabla y los datos que se desea guardar para obtener respuesta.
+
+Link: http://localhost:5000/spaces [�POST�]
+http://localhost:5000/spaces 
+Datos a ingresar en el JSON:       --------------->      Respuesta:
+
+
+{
+	"period_id": 1,
+	"name": "Ingles II333",
+	"semester": "4"
+}
+
+
+
+El m�todo PUT (editar spaces) en este caso tiene un caso especial en cuanto al ID se bebe agregar tanto en la URL como en el JSON del dato que se desea actualizar.
+Link: http://localhost:5000/spaces/ID [�PUT�]
+Datos a ingresaren el JSON ejemplo:  ----->   Respuesta:
+http://localhost:5000/spaces/6 
+{
+	"id": 6,
+	"period_id": 1,
+	"name": "Calculo",
+	"semester": "5"
+}
+
+El m�todo DELETE (eliminar spaces) en este caso el ID del espacio acad�mico que se quiere eliminar se debe agregar en la URL.
+Link: http://localhost:5000/spaces/ID [�DELETE�]
+ejemplo:
+http://localhost:5000/spaces/9 
+Respuesta:
+
+
+
+Paso 4 (cuatro m�todos sesiones de clases)
+Endpoint: /sessions
+Este Endpoint tiene los m�todos GET, POST, PUT, DELETE.
+El m�todo GET (visualizar sessions), no tiene ning�n problema se ingresa el link en el cliente de API y nos devuelve una respuesta.
+Link: http://localhost:5000/sessions [�GET�]
+http://localhost:5000/sessions 
+Respuesta:
+
+
+El m�todo POST (crear sessions) tiene una serie de pasos extra se debe ingresar los campos de la tabla y los datos que se desea guardar para obtener respuesta.
+
+Link: http://localhost:5000/sessions [�POST�]
+http://localhost:5000/sessions 
+Datos a ingresar en el JSON:       --------------- >      Respuesta:
+
+
+{
+	"academic_space_id": 3,
+	"cut": 3,
+	"date": "06-06-2021",
+	"start_time": "08:00",
+	"end_time": "00:00"
+}
+
+
+
+
+
+El m�todo PUT (editar sessions) en este caso tiene un caso especial en cuanto al ID se bebe agregar tanto en la URL como en el JSON del dato que se desea actualizar.
+Link: http://localhost:5000/sessions/ID [�PUT�]
+Datos a ingresaren el JSON ejemplo:  ----------------->   Respuesta:
+http://localhost:5000/sessions/9 
+
+{
+	"id": 9,
+	"academic_space_id": 3,
+	"cut": 2,
+	"date": "06-06-2022",
+	"start_time": "08:00",
+	"end_time": "07:00"
+}
+
+El m�todo DELETE (eliminar sessions) en este caso el ID de la sesi�n que se quiere eliminar se debe agregar en la URL.
+Link: http://localhost:5000/sessions/ID [�DELETE�]
+ejemplo:
+http://localhost:5000/sessions/9 
+Respuesta:
+
+Paso 5 (cuatro m�todos actividades realizadas)
+Endpoint: /activities
+Este Endpoint tiene los m�todos GET, POST, PUT, DELETE.
+El m�todo GET (visualizar activities), no tiene ning�n problema se ingresa el link en el cliente de API y nos devuelve una respuesta.
+Link: http://localhost:5000/activities [�GET�]
+http://localhost:5000/activities 
+Respuesta:
+
+El m�todo POST (crear activities) tiene una serie de pasos extra se debe ingresar los campos de la tabla y los datos que se desea guardar para obtener respuesta.
+
+Link: http://localhost:5000/activities [�POST�]
+http://localhost:5000/activities 
+Datos a ingresar en el JSON:       ------------- >      Respuesta:
+
+{
+	"academic_space_id": 4,
+	"cut": 3,
+	"name": "pronunciacion",
+	"average_cut": "3.9"
+}
+
+
+El m�todo PUT (editar activities) en este caso tiene un caso especial en cuanto al ID se bebe agregar tanto en la URL como en el JSON del dato que se desea actualizar.
+Link: http://localhost:5000/activities/ID [�PUT�]
+Datos a ingresaren el JSON ejemplo:  ----------------->   Respuesta:
+http://localhost:5000/activities/7 
+{
+	"id": 7,
+	"academic_space_id": 5,
+	"cut": 1,
+	"name": "pronunciacion",
+	"average_cut": "4.0"
+}
+
+El m�todo DELETE (eliminar activities) en este caso el ID de la actividad que se quiere eliminar se debe agregar en la URL.
+Link: http://localhost:5000/activities/ID [�DELETE�]
+ejemplo:
+http://localhost:5000/activities/7  
+Respuesta:
+
+Paso 6 (cuatro m�todos de notas de estudiantes)
+Endpoint: /notes
+Este Endpoint tiene los m�todos GET, POST, PUT, DELETE.
+El m�todo GET (visualizar notes), no tiene ning�n problema se ingresa el link en el cliente de API y nos devuelve una respuesta.
+Link: http://localhost:5000/notes [�GET�]
+http://localhost:5000/notes 
+Respuesta:
+
+
+El m�todo POST (crear notes) tiene una serie de pasos extra se debe ingresar los campos de la tabla y los datos que se desea guardar para obtener respuesta.
+
+Link: http://localhost:5000/notes [�POST�]
+http://localhost:5000/notes 
+Datos a ingresar en el JSON:       ------------- >      Respuesta:
+
+
+
+{
+	"performed_activity_id": 5,
+	"student_id": 29,
+	"note": "3.9",
+	"observation": "falto informacion"
+}
+
+
+
+El m�todo PUT (editar notes) en este caso tiene un caso especial en cuanto al ID se bebe agregar tanto en la URL como en el JSON del dato que se desea actualizar.
+Link: http://localhost:5000/notes/ID [�PUT�]
+Datos a ingresaren el JSON ejemplo:  ----------->   Respuesta:
+http://localhost:5000/notes/5 
+
+{
+	"id": 5,
+	"performed_activity_id": 3,
+	"student_id": 28,
+	"note": "4.0",
+	"observation": "mejorar justificacion"
+}
+
+
+
+El m�todo DELETE (eliminar notes) en este caso el ID de la nota del estudiante que se quiere eliminar se debe agregar en la URL.
+Link: http://localhost:5000/notes/ID [�DELETE�]
+ejemplo:
+http://localhost:5000/notes/8 
+Respuesta:
+
+
+Paso 7 (cuatro m�todos de asistencias estudiantes)
+Endpoint: /assists
+Este Endpoint tiene los m�todos GET, POST, PUT, DELETE.
+El m�todo GET (visualizar assists), no tiene ning�n problema se ingresa el link en el cliente de API y nos devuelve una respuesta.
+Link: http://localhost:5000/assists [�GET�]
+http://localhost:5000/assists 
+Respuesta:
+
+
+El m�todo POST (crear assists) tiene una serie de pasos extra se debe ingresar los campos de la tabla y los datos que se desea guardar para obtener respuesta.
+
+Link: http://localhost:5000/assists [�POST�]
+http://localhost:5000/assists 
+Datos a ingresar en el JSON ejemplo:       ---------->      Respuesta:
+
+{
+	"session_id": 2,
+	"student_id": 1,
+	"assistance": 1
+}
+
+
+El m�todo PUT (editar assists) en este caso tiene un caso especial en cuanto al ID se bebe agregar tanto en la URL como en el JSON del dato que se desea actualizar.
+Link: http://localhost:5000/assists/ID [�PUT�]
+Datos a ingresaren el JSON ejemplo:  ----------- >   Respuesta:
+http://localhost:5000/assists/8 
+{
+	"id": 8,
+	"session_id": 3,
+	"student_id": 28,
+	"assistance": 1
+}
+
+El m�todo DELETE (eliminar assists) en este caso el ID de la asistencia que se quiere eliminar se debe agregar en la URL.
+Link: http://localhost:5000/assists/ID [�DELETE�]
+ejemplo:
+http://localhost:5000/assists/8 
+Respuesta:
+Documentacion L4G
+
+
+0 Examen Final
+
+

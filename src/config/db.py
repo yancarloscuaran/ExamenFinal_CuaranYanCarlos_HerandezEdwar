@@ -5,7 +5,7 @@ config ={
     'port': 3308,
     'user': 'root',
     'password': '',
-    'database': 'flask_mvc'
+    'database': 'api_student'
 }
 
 #** para accionar todos los elementos del diccionario config
